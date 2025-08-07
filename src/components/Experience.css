@@ -1,0 +1,205 @@
+.experience-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.experience-title {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #00e6e6;
+  text-shadow: 0 0 10px rgba(0, 230, 230, 0.7);
+}
+
+/* Timeline Structure */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding-left: 40px;
+  border-left: 4px solid #00e6e6;
+  max-width: 1000px;
+}
+
+/* Timeline Icon */
+.timeline-icon {
+  position: absolute;
+  left: -26px;
+  top: 40px;
+  width: 16px;
+  height: 16px;
+  background-color: #00e6e6;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #00e6e6;
+}
+
+/* Timeline Card */
+.timeline-item {
+  background-color: #0d1c24;
+  border: 3px solid #00e6e6;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 230, 230, 0.4);
+  margin-bottom: 3rem;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 35px rgba(0, 230, 230, 0.6);
+}
+
+.timeline-content {
+  text-align: left;
+}
+
+/* Company Logo */
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #00e6e6;
+  box-shadow: 0 0 15px rgba(0, 230, 230, 0.6);
+}
+
+/* Text Styling */
+.timeline-content h3 {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.timeline-content h4 {
+  color: #00e6e6;
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+.timeline-content h4 span {
+  color: #ffffff;
+  font-weight: 400;
+}
+
+.duration {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 1rem;
+}
+
+.timeline-content ul {
+  padding-left: 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.timeline-content ul li {
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Skill Tags */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: #00e6e6;
+  color: #0d1c24;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 230, 230, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline {
+    padding-left: 20px;
+  }
+
+  .timeline-icon {
+    left: -20px;
+  }
+}
+
+/* Layout wrapper */
+.experience-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Timeline adjusts for side-by-side layout */
+.timeline {
+  flex: 2;
+  max-width: 60%;
+}
+
+/* Lottie animation container */
+.experience-lottie {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+  padding-top: 1rem;
+}
+
+.experience-lottie svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .experience-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .timeline {
+    max-width: 100%;
+    padding-left: 20px;
+  }
+
+  .experience-lottie {
+    max-width: 350px;
+    margin-top: 2rem;
+  }
+}
+
+/* Spacer between two lottie animations */
+.spacer {
+  height: 40px;
+}
+
+/* Make sure both animations scale nicely */
+.experience-lottie svg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
