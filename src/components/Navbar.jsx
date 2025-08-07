@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-center">
-          <span className="portfolio-title">Portfolio</span>
+          <span className="portfolio-title">PORTFOLIO</span>
         </div>
 
         <nav className="navbar-right">
