@@ -1,169 +1,73 @@
-# 🚀 Naga Sri Ram Kochetti – Data Scientist Portfolio
+# Welcome to your Lovable project
 
-This is the personal portfolio website of **Naga Sri Ram Kochetti**, designed to showcase projects, skills, certifications, education, and experience in the field of **Data Science, AI, ML, and DevOps**.
+## Project info
 
-🌐 **Live Website:** [https://nagasriram.com](https://nagasriram.com)
+**URL**: https://lovable.dev/projects/3c94aaa5-b1ed-4bff-925c-e5ccac2ca801
 
----
+## How can I edit this code?
 
-## 🛠️ Tech Stack
+There are several ways of editing your application.
 
-- ⚛️ React.js (Vite)
-- 🎨 Tailwind CSS & Custom CSS
-- 🌌 Particles.js (for animated backgrounds)
-- 🧩 Lottie JSON Animations
-- 📦 GitHub for Version Control
-- 🚀 Netlify for Hosting & CI/CD
-- 🌐 GoDaddy for Domain Management
+**Use Lovable**
 
----
+Simply visit the [Lovable Project](https://lovable.dev/projects/3c94aaa5-b1ed-4bff-925c-e5ccac2ca801) and start prompting.
 
-## 📁 Folder Structure
+Changes made via Lovable will be committed automatically to this repo.
 
-```
-portfolio-site/
-├── public/
-│   └── hero-illustration.png     # Site icon
-├── src/
-│   ├── assets/                   # Lottie animations, images, icons
-│   ├── components/               # All page components
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html                    # Main HTML file
-├── package.json
-└── README.md
-```
+**Use your preferred IDE**
 
----
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-## 💻 Run the Project Locally
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-### Step 1: Clone the Repository
+Follow these steps:
 
-```bash
-git clone https://github.com/nagasriramnani/Data-Scientist-Portfolio.git
-cd Data-Scientist-Portfolio
-```
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
-### Step 2: Install Dependencies
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-```bash
-npm install
-```
+# Step 3: Install the necessary dependencies.
+npm i
 
-### Step 3: Start the Development Server
-
-```bash
+# Step 4: Start the development server with auto-reloading and an instant preview.
 npm run dev
 ```
 
-Then visit: `http://localhost:5173`
+**Edit a file directly in GitHub**
 
----
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-## 🚀 Deployment Using Netlify
+**Use GitHub Codespaces**
 
-### ✅ Step 1: Push Project to GitHub
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-```bash
-git init
-git remote add origin https://github.com/nagasriramnani/Data-Scientist-Portfolio.git
-git add .
-git commit -m "Initial commit"
-git push -u origin main
-```
+## What technologies are used for this project?
 
-### ✅ Step 2: Set Up Deployment on Netlify
+This project is built with:
 
-1. Visit: [https://app.netlify.com](https://app.netlify.com)
-2. Click **"Add New Site" > "Import from Git"**
-3. Connect your GitHub account
-4. Choose the `Data-Scientist-Portfolio` repo
-5. Set build settings:
-   - **Build Command:** `npm run build`
-   - **Publish Directory:** `dist`
-6. Click **Deploy Site**
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-Netlify will build and deploy your portfolio to a unique subdomain like:
-```
-https://your-site-name.netlify.app
-```
+## How can I deploy this project?
 
----
+Simply open [Lovable](https://lovable.dev/projects/3c94aaa5-b1ed-4bff-925c-e5ccac2ca801) and click on Share -> Publish.
 
-## 🌐 Connect Custom Domain (GoDaddy)
+## Can I connect a custom domain to my Lovable project?
 
-### ✅ Step 1: Add Domain in Netlify
+Yes, you can!
 
-1. In Netlify, go to **"Site settings > Domains"**
-2. Click **"Add custom domain"** → enter `nagasriram.com`
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-### ✅ Step 2: Configure GoDaddy DNS
-
-1. Go to [GoDaddy DNS Management](https://dcc.godaddy.com/)
-2. Remove any existing **A**, **AAAA**, or **CNAME** entries that conflict
-3. Add the following DNS records:
-
-| Type | Name | Value                 | TTL     |
-|------|------|------------------------|---------|
-| A    | @    | 75.2.60.5             | Default |
-| A    | @    | 99.83.190.102         | Default |
-| CNAME | www | your-netlify-subdomain.netlify.app | Default |
-
-> Replace `your-netlify-subdomain` with your actual Netlify subdomain.
-
-### ✅ Step 3: Verify Domain
-
-1. Go back to Netlify → **Domain settings**
-2. Click **"Verify DNS configuration"**
-3. Once verified, your site will be live on **https://nagasriram.com**
-
----
-
-## 🔁 Update and Redeploy
-
-Every time you push changes to GitHub:
-
-```bash
-git add .
-git commit -m "update"
-git push
-```
-
-Netlify will **automatically rebuild and deploy** your changes!
-
----
-
-## 🧩 Lottie Animations
-
-- Animations are stored in `src/assets/` as JSON files
-- Integrated using the `lottie-react` library
-- Used for About, Experience, and Education sections
-
----
-
-## 🧠 Features
-
-- ✅ Hero with animated particles and social links
-- ✅ About with Lottie UI illustration
-- ✅ Experience timeline with glowing effects
-- ✅ Projects section with hover cards
-- ✅ Education timeline with animation
-- ✅ Certifications with grouped hover cards
-- ✅ Contact form with email + social links
-- ✅ Fully responsive and visually dynamic
-- ✅ Custom domain connected via GoDaddy
-
----
-
-## 📬 Contact
-
-- 📧 **Email**: nagasriramkochetti@gmail.com
-- 🔗 **LinkedIn**: [linkedin.com/in/naga-sri-ram-kochetti](https://www.linkedin.com/in/naga-sri-ram-kochetti-72a464189/)
-- 💻 **GitHub**: [github.com/nagasriramnani](https://github.com/nagasriramnani)
-
----
-
-> Built with 💙 by Naga Sri Ram Kochetti
-
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
