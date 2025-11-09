@@ -6,11 +6,34 @@ import ExperienceSection from '@/components/ExperienceSection';
 import EducationSection from '@/components/EducationSection';
 import SkillsSection from '@/components/SkillsSection';
 import ContactSection from '@/components/ContactSection';
+import { Button } from '@/components/ui/button';
+import { Presentation } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Index = () => {
   return (
     <div className="relative min-h-screen">
       <Background3D />
+      
+      {/* Presentation Button - Top Left */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="fixed top-6 left-6 z-50"
+      >
+        <Button
+          size="lg"
+          className="bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-primary/50 transition-all backdrop-blur-sm"
+          asChild
+        >
+          <Link to="/presentation">
+            <Presentation className="mr-2 h-5 w-5" />
+            Presentation
+          </Link>
+        </Button>
+      </motion.div>
       
       <main className="relative z-10">
         <HeroSection />
