@@ -25,6 +25,14 @@ export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [direction, setDirection] = useState(0);
 
+  // Set document title
+  useEffect(() => {
+    document.title = 'Nissan KTP Presentation | Naga Sri Ram Kochetti';
+    return () => {
+      document.title = 'Naga Sri Ram Kochetti | AI Engineer × Data Scientist';
+    };
+  }, []);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
