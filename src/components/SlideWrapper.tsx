@@ -21,7 +21,7 @@ export default function SlideWrapper({ children, slideNumber, direction = 0 }: S
       
       {/* Slide Number */}
       <div className="absolute bottom-8 right-12 text-cyan-400/60 text-sm font-medium">
-        {slideNumber} / 10
+        {slideNumber} / 11
       </div>
     </motion.div>
   );
