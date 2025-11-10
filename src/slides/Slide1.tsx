@@ -28,9 +28,14 @@ export default function Slide1() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.7, duration: 0.6 }}
-        className="text-lg text-gray-300 mb-12 max-w-4xl mx-auto"
+        className="text-xl text-gray-200 mb-12 max-w-4xl mx-auto leading-relaxed"
       >
-        Background, Experience and Project Approach for the Digital Vehicle Test Engineer Role
+        <p className="mb-4">
+          "Every great innovation begins with a bridge — between data and decision, between research and industry.
+        </p>
+        <p className="text-[#00e5ff] font-semibold">
+          My goal is to build that bridge — an intelligent testing assistant that transforms how vehicles are validated."
+        </p>
       </motion.div>
 
       {/* Bridge Visual */}
@@ -67,10 +72,9 @@ export default function Slide1() {
         transition={{ delay: 1.3, duration: 0.6 }}
         className="mt-12"
       >
-        <h3 className="text-2xl font-bold text-[#00e5ff] mb-2">Naga Sri Ram Kochetti</h3>
-        <p className="text-lg text-gray-300 italic">
-          "An applied AI engineer focused on turning complex data and research<br />
-          into practical tools for vehicle testing and validation."
+        <h3 className="text-2xl font-bold text-[#00e5ff] mb-2">By Naga Sri Ram Kochetti</h3>
+        <p className="text-lg text-cyan-300">
+          Digital Vehicle Test Engineer – KTP Associate Candidate
         </p>
       </motion.div>
     </div>

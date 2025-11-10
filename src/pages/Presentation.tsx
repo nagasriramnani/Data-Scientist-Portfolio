@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import PresentationBackground from '@/components/PresentationBackground';
 import SlideWrapper from '@/components/SlideWrapper';
+import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 
 // Import all slides
 import Slide1 from '@/slides/Slide1';
@@ -26,12 +27,7 @@ export default function Presentation() {
   const [direction, setDirection] = useState(0);
 
   // Set document title
-  useEffect(() => {
-    document.title = 'Nissan KTP Presentation | Naga Sri Ram Kochetti';
-    return () => {
-      document.title = 'Naga Sri Ram Kochetti | AI Engineer × Data Scientist';
-    };
-  }, []);
+  useDocumentTitle('Nissan KTP Presentation | Naga Sri Ram Kochetti');
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

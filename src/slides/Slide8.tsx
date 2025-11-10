@@ -1,119 +1,171 @@
 import { motion } from 'framer-motion';
 
-const phases = [
-  {
-    number: 1,
-    title: 'Understand & Model',
-    timeline: '0–3 months',
-    color: '#2554C7',
-    items: [
-      'Shadow engineers, map ontology',
-      'Ingest standards',
-      'Deliver trusted semantic model',
-    ],
-  },
-  {
-    number: 2,
-    title: 'Build & Integrate',
-    timeline: '3–12 months',
-    color: '#C3002F',
-    items: [
-      'Extend VTA backend',
-      'Connect to CARLA / internal systems',
-      'Pilot dashboard with engineers',
-    ],
-  },
-  {
-    number: 3,
-    title: 'Validate & Scale',
-    timeline: '12–27 months',
-    color: '#00e5ff',
-    items: [
-      'Measure ROI',
-      'Iterate UX',
-      'Produce business case for global rollout',
-    ],
-  },
-];
+const rowVariants = {
+  hidden: { opacity: 0, x: -20 },
+  show: { opacity: 1, x: 0 },
+};
 
 export default function Slide8() {
   return (
-    <div className="w-full max-w-6xl mx-auto pt-4">
+    <div className="w-full max-w-6xl mx-auto">
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-3 px-8 mb-8 rounded-lg shadow-lg shadow-cyan-500/50"
+        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-4 px-8 mb-10 rounded-lg shadow-lg shadow-cyan-500/50"
       >
-        <h2 className="text-2xl font-bold">MY PROJECT APPROACH AT NISSAN</h2>
-        <p className="text-base mt-1 text-gray-900 font-semibold">If I Join, Here's How I'd Approach the Project</p>
+        <h2 className="text-3xl font-bold">EXPECTED IMPACT & VALUE</h2>
+        <p className="text-lg mt-2 opacity-90">Tie Innovation to Results</p>
       </motion.div>
 
-      <div className="space-y-6">
-        {phases.map((phase, index) => (
-          <motion.div
-            key={phase.number}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 + index * 0.3 }}
-            className="relative"
-          >
-            <div className="flex items-start gap-4">
-              {/* Phase Number Circle */}
-              <div
-                className="flex-shrink-0 w-20 h-20 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg"
-                style={{ 
-                  backgroundColor: phase.color,
-                  boxShadow: `0 0 30px ${phase.color}60`
-                }}
-              >
-                {phase.number}
-              </div>
-
-              {/* Phase Content */}
-              <div className="flex-1 bg-[#1a1f35]/60 backdrop-blur-sm p-5 rounded-lg shadow-lg border-l-4" style={{ borderColor: phase.color }}>
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-bold text-cyan-300">Phase {phase.number}: {phase.title}</h3>
-                  <span className="bg-[#0a0e1a]/60 border border-[#2554C7] px-3 py-1 rounded-full text-xs font-semibold text-cyan-300">
-                    {phase.timeline}
-                  </span>
-                </div>
-
-                <ul className="space-y-2">
-                  {phase.items.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.5 + index * 0.3 + i * 0.1 }}
-                      className="flex items-start gap-2"
-                    >
-                      <span className="text-[#00e5ff] text-lg mt-0.5">▸</span>
-                      <span className="text-gray-200 text-base">{item}</span>
-                    </motion.li>
-                  ))}
-                </ul>
+      {/* Impact Table */}
+      <div className="space-y-5">
+        <motion.div
+          variants={rowVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.2 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border-2 border-[#2554C7]"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="bg-[#2554C7] p-5 flex items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">⚡</span>
+                <h3 className="text-xl font-bold text-white">Efficiency</h3>
               </div>
             </div>
+            <div className="p-5 flex items-center">
+              <p className="text-lg text-gray-200">
+                Reduce duplicate testing by <strong className="text-cyan-300">30–50%</strong>
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
-            {/* Connector Arrow */}
-            {index < phases.length - 1 && (
-              <div className="ml-10 mt-3 mb-3 flex items-center">
-                <div className="w-1 h-6 bg-gradient-to-b from-[#2554C7] to-[#00e5ff]"></div>
-                <div className="text-xl text-[#00e5ff] ml-2">↓</div>
+        <motion.div
+          variants={rowVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.4 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border-2 border-[#00e5ff]"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="bg-[#00e5ff] p-5 flex items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🚀</span>
+                <h3 className="text-xl font-bold text-[#0a0e1a]">Time-to-Market</h3>
               </div>
-            )}
-          </motion.div>
-        ))}
+            </div>
+            <div className="p-5 flex items-center">
+              <p className="text-lg text-gray-200">
+                Shorter validation cycles by <strong className="text-cyan-300">~40%</strong>
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={rowVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.6 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border-2 border-[#C3002F]"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="bg-[#C3002F] p-5 flex items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🧠</span>
+                <h3 className="text-xl font-bold text-white">Knowledge</h3>
+              </div>
+            </div>
+            <div className="p-5 flex items-center">
+              <p className="text-lg text-gray-200">
+                Create <strong className="text-cyan-300">living ontology</strong> of test intelligence
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={rowVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.8 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border-2 border-[#4caf50]"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="bg-[#4caf50] p-5 flex items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">🌱</span>
+                <h3 className="text-xl font-bold text-white">Sustainability</h3>
+              </div>
+            </div>
+            <div className="p-5 flex items-center">
+              <p className="text-lg text-gray-200">
+                Fewer physical prototypes → <strong className="text-cyan-300">lower resource use</strong>
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={rowVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 1.0 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm rounded-lg shadow-lg overflow-hidden border-2 border-[#ff9800]"
+        >
+          <div className="grid md:grid-cols-2 gap-0">
+            <div className="bg-[#ff9800] p-5 flex items-center">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">📚</span>
+                <h3 className="text-xl font-bold text-white">Research Output</h3>
+              </div>
+            </div>
+            <div className="p-5 flex items-center">
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">REF-impact</strong> publications + AI methodologies
+              </p>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
+      {/* Before/After Comparison */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5 }}
-        className="mt-8 bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg text-center border border-[#2554C7]/30"
+        transition={{ delay: 1.3 }}
+        className="mt-10 grid md:grid-cols-2 gap-6"
       >
-        <p className="text-base font-semibold text-cyan-300">
-          📊 Clear roadmap from research to production-ready system
+        <div className="bg-gradient-to-br from-gray-700 to-gray-900 p-6 rounded-lg shadow-lg text-center">
+          <h3 className="text-xl font-bold text-gray-300 mb-4">Before</h3>
+          <div className="space-y-2 text-gray-400">
+            <p>❌ Repeated tests</p>
+            <p>❌ Siloed knowledge</p>
+            <p>❌ Weeks of planning</p>
+            <p>❌ Manual searches</p>
+          </div>
+        </div>
+        <div className="bg-gradient-to-br from-[#2554C7] to-[#00e5ff] p-6 rounded-lg shadow-lg shadow-cyan-500/40 text-center">
+          <h3 className="text-xl font-bold text-white mb-4">After</h3>
+          <div className="space-y-2 text-white">
+            <p>✅ Smart reuse</p>
+            <p>✅ Connected intelligence</p>
+            <p>✅ Minutes of planning</p>
+            <p>✅ AI-powered insights</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Key Quote */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.6 }}
+        className="mt-8 bg-gradient-to-r from-[#C3002F] to-[#ff1744] text-white p-6 rounded-lg shadow-lg shadow-red-500/30 text-center"
+      >
+        <p className="text-2xl font-bold italic">
+          "This isn't just an AI tool — it's a <span className="underline">new way of capturing engineering knowledge</span> for every future vehicle program."
         </p>
       </motion.div>
     </div>

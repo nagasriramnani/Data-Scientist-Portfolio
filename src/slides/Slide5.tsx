@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 
-const bulletVariants = {
-  hidden: { opacity: 0, x: -20 },
-  show: { opacity: 1, x: 0 },
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
 };
 
 export default function Slide5() {
@@ -11,113 +11,152 @@ export default function Slide5() {
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-4 px-8 mb-12 rounded-lg shadow-lg shadow-cyan-500/50"
+        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-4 px-8 mb-10 rounded-lg shadow-lg shadow-cyan-500/50"
       >
-        <h2 className="text-3xl font-bold">THE CHALLENGE AT NISSAN</h2>
-        <p className="text-lg mt-2 opacity-90">Testing Is Expensive, Complex and Hard to Reuse</p>
+        <h2 className="text-3xl font-bold">WHO I AM AND WHY I FIT</h2>
+        <p className="text-lg mt-2 opacity-90">Building Confidence in My Ability</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Problem Bullets */}
-        <motion.div className="space-y-4">
-          <motion.div
-            variants={bulletVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 0.2 }}
-            className="bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">⚙️</span>
-              <p className="text-gray-200">Many platforms (<strong className="text-cyan-300">EV, HEV, ICE</strong>) & variants.</p>
+      <div className="space-y-5">
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.2 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-[#2554C7]"
+        >
+          <div className="flex items-start gap-4">
+            <span className="text-3xl">🎓</span>
+            <div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">MSc Big Data & High-Performance Computing (Liverpool)</strong>
+              </p>
+              <p className="text-gray-300 mt-1">
+                Dissertation on digital-twin simulation for autonomous-driving safety.
+              </p>
             </div>
-          </motion.div>
-
-          <motion.div
-            variants={bulletVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 0.4 }}
-            className="bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">📚</span>
-              <p className="text-gray-200">Test knowledge in <strong className="text-cyan-300">silos</strong> – docs & spreadsheets.</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={bulletVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 0.6 }}
-            className="bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">♻️</span>
-              <p className="text-gray-200">Duplicate / redundant tests = <strong className="text-cyan-300">wasted time & cost</strong>.</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={bulletVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 0.8 }}
-            className="bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">✓</span>
-              <p className="text-gray-200">Must comply with <strong className="text-cyan-300">UNECE R100, ISO 26262, WLTP, NCAP</strong>.</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            variants={bulletVariants}
-            initial="hidden"
-            animate="show"
-            transition={{ delay: 1.0 }}
-            className="bg-[#1a1f35]/60 backdrop-blur-sm p-4 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
-          >
-            <div className="flex items-start gap-3">
-              <span className="text-2xl">👨‍💻</span>
-              <p className="text-gray-200">Engineers need systems that <strong className="text-cyan-300">remember and explain</strong>.</p>
-            </div>
-          </motion.div>
+          </div>
         </motion.div>
 
-        {/* Visual - "Before" Panel */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2 }}
-          className="bg-[#1a1f35]/60 backdrop-blur-sm p-8 rounded-lg shadow-lg flex flex-col items-center justify-center border border-[#2554C7]/30"
+          variants={itemVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.4 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-[#00e5ff]"
         >
-          <h3 className="text-xl font-bold text-cyan-300 mb-6">Current State</h3>
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <div className="text-5xl">📄</div>
-            <div className="text-5xl">📊</div>
-            <div className="text-5xl">📋</div>
-            <div className="text-5xl">📁</div>
-            <div className="text-5xl">📑</div>
-            <div className="text-5xl">📈</div>
+          <div className="flex items-start gap-4">
+            <span className="text-3xl">🤖</span>
+            <div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">Hands-on AI Engineer</strong>
+              </p>
+              <p className="text-gray-300 mt-1">
+                Experience across data pipelines, semantic AI, RAG systems, and LLM applications.
+              </p>
+            </div>
           </div>
-          <p className="text-center text-lg font-semibold text-[#C3002F]">
-            ⚠️ Test Planning Pain
-          </p>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.6 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-[#C3002F]"
+        >
+          <div className="flex items-start gap-4">
+            <span className="text-3xl">📊</span>
+            <div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">Data Specialist (DWP)</strong>
+              </p>
+              <p className="text-gray-300 mt-1">
+                Automated analytical pipelines + governance.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.8 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-[#ff9800]"
+        >
+          <div className="flex items-start gap-4">
+            <span className="text-3xl">💻</span>
+            <div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">AI Developer (Pareto.ai)</strong>
+              </p>
+              <p className="text-gray-300 mt-1">
+                Built retrieval-augmented systems and intelligent APIs.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          variants={itemVariants}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 1.0 }}
+          className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-l-4 border-[#00e5ff]"
+        >
+          <div className="flex items-start gap-4">
+            <span className="text-3xl">⚙️</span>
+            <div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-cyan-300">Technical Stack</strong>
+              </p>
+              <p className="text-gray-300 mt-1">
+                Fluent in Python, PyTorch, TensorFlow, FastAPI, Neo4j, Azure.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
 
-      {/* Quote */}
+      {/* Key Quote */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.4 }}
-        className="mt-8 bg-gradient-to-r from-[#C3002F] to-[#ff1744] text-white p-6 rounded-lg shadow-lg shadow-red-500/30 text-center"
+        transition={{ delay: 1.3 }}
+        className="mt-10 bg-gradient-to-r from-[#C3002F] to-[#ff1744] text-white p-6 rounded-lg shadow-lg shadow-red-500/30 text-center"
       >
-        <p className="text-xl italic">
-          "To support the mobility society of the future, our testing processes must be <strong>intelligent, connected and explainable</strong>."
+        <p className="text-2xl font-bold italic">
+          "I sit exactly where this project lives — between <span className="underline">data engineering</span>, <span className="underline">AI modelling</span>, and <span className="underline">human-centred design</span>."
         </p>
+      </motion.div>
+
+      {/* Personal Timeline */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5 }}
+        className="mt-10 flex justify-center items-center gap-3"
+      >
+        <div className="text-center">
+          <div className="w-20 h-20 bg-[#2554C7] rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/50 text-sm">MSc</div>
+          <p className="mt-2 text-xs text-cyan-300">2022-23</p>
+        </div>
+        <div className="h-1 w-12 bg-gradient-to-r from-[#2554C7] to-[#00e5ff]"></div>
+        <div className="text-center">
+          <div className="w-20 h-20 bg-[#2554C7] rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-blue-500/50 text-sm">DWP</div>
+          <p className="mt-2 text-xs text-cyan-300">2024</p>
+        </div>
+        <div className="h-1 w-12 bg-gradient-to-r from-[#00e5ff] to-[#ff9800]"></div>
+        <div className="text-center">
+          <div className="w-20 h-20 bg-[#ff9800] rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-orange-500/50 text-xs">Pareto</div>
+          <p className="mt-2 text-xs text-cyan-300">2025</p>
+        </div>
+        <div className="h-1 w-12 bg-gradient-to-r from-[#ff9800] to-[#C3002F]"></div>
+        <div className="text-center">
+          <div className="w-20 h-20 bg-[#C3002F] rounded-full flex items-center justify-center text-white font-bold shadow-lg shadow-red-500/50 text-sm">KTP</div>
+          <p className="mt-2 text-xs text-cyan-300">Goal</p>
+        </div>
       </motion.div>
     </div>
   );

@@ -1,106 +1,157 @@
 import { motion } from 'framer-motion';
 
+const phaseVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+};
+
 export default function Slide9() {
   return (
     <div className="w-full max-w-6xl mx-auto">
       <motion.div
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-[#C3002F] to-[#ff1744] text-white py-4 px-8 mb-12 rounded-lg shadow-lg shadow-red-500/30"
+        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-4 px-8 mb-10 rounded-lg shadow-lg shadow-cyan-500/50"
       >
-        <h2 className="text-3xl font-bold">WHY ME, WHY NISSAN, WHY NOW</h2>
-        <p className="text-lg mt-2 opacity-90">Why I'm the Right Person to Build This Bridge</p>
+        <h2 className="text-3xl font-bold">ROADMAP TO DELIVERY</h2>
+        <p className="text-lg mt-2 opacity-90">Strategic Execution Plan</p>
       </motion.div>
 
-      <div className="grid md:grid-cols-3 gap-8 mb-8">
-        {/* Technical Depth */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="bg-[#1a1f35]/60 backdrop-blur-sm p-8 rounded-lg shadow-lg border-t-4 border-[#2554C7] hover:shadow-blue-500/30 transition-shadow"
-        >
-          <div className="text-5xl mb-4 text-center">🔧</div>
-          <h3 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Technical Depth</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200"><strong className="text-cyan-400">Semantic Web</strong> (Neo4j, RDF, OWL)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200"><strong className="text-cyan-400">AI & ML</strong> (embeddings, vector search, LangChain)</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200"><strong className="text-cyan-400">Full-stack</strong> (Python, FastAPI, Docker, simulation)</span>
-            </li>
-          </ul>
-        </motion.div>
+      {/* Vertical Timeline */}
+      <div className="relative">
+        {/* Vertical Line */}
+        <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#2554C7] via-[#00e5ff] to-[#C3002F]"></div>
 
-        {/* Proven Delivery */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="bg-[#1a1f35]/60 backdrop-blur-sm p-8 rounded-lg shadow-lg border-t-4 border-[#C3002F] hover:shadow-red-500/30 transition-shadow"
-        >
-          <div className="text-5xl mb-4 text-center">✅</div>
-          <h3 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Proven Delivery</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200">Built <strong className="text-cyan-400">VTA end-to-end</strong></span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200">Delivered projects at <strong className="text-cyan-400">DWP and Pareto.ai</strong> in regulated environments</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200"><strong className="text-cyan-400">Quantified ROI</strong> & impact</span>
-            </li>
-          </ul>
-        </motion.div>
+        <div className="space-y-8 pl-20">
+          {/* Phase 1 */}
+          <motion.div
+            variants={phaseVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.2 }}
+            className="relative"
+          >
+            <div className="absolute -left-[3.25rem] top-1/2 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-[#2554C7] to-[#00e5ff] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/50 border-4 border-[#0a0e1a]">
+              1
+            </div>
+            <div className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-2 border-[#2554C7]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-bold text-cyan-300">Phase 1</h3>
+                <span className="text-sm text-gray-400 bg-[#2554C7]/30 px-3 py-1 rounded-full">0–6 months</span>
+              </div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-white">Key Deliverables:</strong> Ontology & Knowledge Graph baseline
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Fit with Nissan */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7 }}
-          className="bg-[#1a1f35]/60 backdrop-blur-sm p-8 rounded-lg shadow-lg border-t-4 border-[#00e5ff] hover:shadow-cyan-500/30 transition-shadow"
-        >
-          <div className="text-5xl mb-4 text-center">🚗</div>
-          <h3 className="text-2xl font-bold text-cyan-300 mb-4 text-center">Fit with Nissan</h3>
-          <ul className="space-y-2">
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200">Passion for <strong className="text-cyan-400">safe, sustainable mobility</strong></span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200">Thrives at <strong className="text-cyan-400">research × engineering</strong> intersection</span>
-            </li>
-            <li className="flex items-start gap-2">
-              <span className="text-[#00e5ff]">●</span>
-              <span className="text-gray-200">Wants to <strong className="text-cyan-400">industrialize AI testing</strong> within Nissan</span>
-            </li>
-          </ul>
-        </motion.div>
+          {/* Phase 2 */}
+          <motion.div
+            variants={phaseVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.5 }}
+            className="relative"
+          >
+            <div className="absolute -left-[3.25rem] top-1/2 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-[#00e5ff] to-[#2554C7] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/50 border-4 border-[#0a0e1a]">
+              2
+            </div>
+            <div className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-2 border-[#00e5ff]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-bold text-cyan-300">Phase 2</h3>
+                <span className="text-sm text-gray-400 bg-[#00e5ff]/30 px-3 py-1 rounded-full">6–12 months</span>
+              </div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-white">Key Deliverables:</strong> AI Reasoning Engine prototype
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Phase 3 */}
+          <motion.div
+            variants={phaseVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.8 }}
+            className="relative"
+          >
+            <div className="absolute -left-[3.25rem] top-1/2 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-[#ff9800] to-[#C3002F] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-orange-500/50 border-4 border-[#0a0e1a]">
+              3
+            </div>
+            <div className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-2 border-[#ff9800]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-bold text-[#ff9800]">Phase 3</h3>
+                <span className="text-sm text-gray-400 bg-[#ff9800]/30 px-3 py-1 rounded-full">12–20 months</span>
+              </div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-white">Key Deliverables:</strong> Integrated VTA System testing within NTCE
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Phase 4 */}
+          <motion.div
+            variants={phaseVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 1.1 }}
+            className="relative"
+          >
+            <div className="absolute -left-[3.25rem] top-1/2 transform -translate-y-1/2 w-16 h-16 bg-gradient-to-br from-[#C3002F] to-[#8b0020] rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-red-500/50 border-4 border-[#0a0e1a]">
+              4
+            </div>
+            <div className="bg-[#1a1f35]/60 backdrop-blur-sm p-6 rounded-lg shadow-lg border-2 border-[#C3002F]">
+              <div className="flex items-center justify-between mb-3">
+                <h3 className="text-2xl font-bold text-[#ff1744]">Phase 4</h3>
+                <span className="text-sm text-gray-400 bg-[#C3002F]/30 px-3 py-1 rounded-full">20–27 months</span>
+              </div>
+              <p className="text-lg text-gray-200">
+                <strong className="text-white">Key Deliverables:</strong> Deployment + Impact Assessment + Publications
+              </p>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Closing Statement */}
+      {/* Success Indicator */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
+        initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1 }}
-        className="bg-gradient-to-r from-[#2554C7] via-[#00e5ff] to-[#C3002F] text-white p-12 rounded-lg shadow-2xl shadow-cyan-500/50 text-center"
+        transition={{ delay: 1.4 }}
+        className="mt-10 bg-gradient-to-br from-[#4caf50] to-[#2e7d32] p-6 rounded-lg shadow-lg shadow-green-500/30 text-center"
       >
-        <p className="text-3xl font-bold leading-relaxed">
-          "I don't just want to work on a project;<br />
-          I want to help Nissan <span className="underline decoration-[#00e5ff]">redefine</span> how vehicle testing<br />
-          is planned and validated."
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <span className="text-4xl">🎯</span>
+          <h3 className="text-2xl font-bold text-white">End Goal</h3>
+        </div>
+        <p className="text-lg text-white leading-relaxed">
+          By the end of <strong>27 months</strong>, Nissan will own a working Virtual Testing Assistant —<br />
+          a system that <strong className="underline">thinks, learns, and recommends</strong> with human-level context.
         </p>
+      </motion.div>
+
+      {/* Visual Timeline Bar */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.7 }}
+        className="mt-8"
+      >
+        <div className="h-3 w-full bg-[#1a1f35] rounded-full overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '100%' }}
+            transition={{ delay: 2, duration: 2 }}
+            className="h-full bg-gradient-to-r from-[#2554C7] via-[#00e5ff] via-[#ff9800] to-[#C3002F]"
+          ></motion.div>
+        </div>
+        <div className="flex justify-between mt-2 text-xs text-gray-400">
+          <span>Month 0</span>
+          <span>6</span>
+          <span>12</span>
+          <span>20</span>
+          <span>27</span>
+        </div>
       </motion.div>
     </div>
   );
