@@ -7,165 +7,140 @@ const layerVariants = {
 
 export default function Slide6() {
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <motion.div
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        className="bg-gradient-to-r from-[#2554C7] to-[#00e5ff] text-white py-4 px-8 mb-8 rounded-lg shadow-lg shadow-cyan-500/50"
-      >
-        <h2 className="text-3xl font-bold">SYSTEM ARCHITECTURE</h2>
-        <p className="text-lg mt-2 opacity-90">Virtual Testing Assistant (Hero Slide)</p>
-      </motion.div>
-
-      {/* Architecture Stack */}
-      <div className="space-y-4">
-        {/* Layer 1: Data Source */}
+    <div className="w-full h-full flex items-center justify-center px-8 py-3 overflow-y-auto">
+      <div className="w-full max-w-4xl mx-auto">
         <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
-          transition={{ delay: 0.2 }}
-          className="bg-gradient-to-r from-[#1a1f35] to-[#2a2f45] p-5 rounded-lg shadow-lg border-2 border-[#2554C7]"
+          initial={{ y: -30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="bg-gradient-to-r from-[#6366f1] to-[#8b5cf6] text-white py-2 px-6 mb-3 rounded-lg shadow-lg"
         >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">📊</span>
-            <h3 className="text-xl font-bold text-cyan-300">Vehicle & Simulation Data</h3>
-          </div>
-          <p className="text-sm text-gray-300 ml-11">
-            logs, plans, sensors
-          </p>
+          <h2 className="text-2xl font-bold">SYSTEM ARCHITECTURE</h2>
+          <p className="text-xs mt-1 opacity-90">Virtual Testing Assistant</p>
         </motion.div>
 
-        {/* Arrow */}
-        <div className="flex justify-center">
-          <div className="text-3xl text-cyan-400">↓</div>
+        {/* Architecture Stack */}
+        <div className="space-y-2">
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.1 }}
+            className="bg-gradient-to-r from-[#1e293b] to-[#2a2f45] p-3 rounded-lg shadow-lg border-2 border-[#6366f1]"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">📊</span>
+              <h3 className="text-sm font-bold text-purple-300">Vehicle & Simulation Data</h3>
+            </div>
+            <p className="text-xs text-gray-300 ml-7">logs, plans, sensors</p>
+          </motion.div>
+
+          <div className="flex justify-center"><div className="text-xl text-purple-400">↓</div></div>
+
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.2 }}
+            className="bg-gradient-to-r from-[#1e293b] to-[#2a2f45] p-3 rounded-lg shadow-lg border-2 border-[#8b5cf6]"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">⚙️</span>
+              <h3 className="text-sm font-bold text-purple-300">Data Ingestion & Normalisation</h3>
+            </div>
+            <p className="text-xs text-gray-300 ml-7">ETL, schema mapping, quality checks</p>
+          </motion.div>
+
+          <div className="flex justify-center"><div className="text-xl text-purple-400">↓</div></div>
+
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.3 }}
+            className="bg-gradient-to-r from-[#6366f1] to-[#4f46e5] p-3 rounded-lg shadow-lg border-2 border-[#8b5cf6]"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xl">🗂️</span>
+              <h3 className="text-sm font-bold text-white">Semantic Knowledge Layer</h3>
+            </div>
+            <div className="ml-7 space-y-0.5 text-xs text-gray-100">
+              <p>• Ontology (vehicles, tests, conditions)</p>
+              <p>• Knowledge Graph (Neo4j)</p>
+              <p>• Vector Index (pgvector)</p>
+            </div>
+          </motion.div>
+
+          <div className="flex justify-center"><div className="text-xl text-purple-400">↓</div></div>
+
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.4 }}
+            className="bg-gradient-to-r from-[#a855f7] to-[#7c3aed] p-3 rounded-lg shadow-lg border-2 border-[#a855f7]"
+          >
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-xl">🤖</span>
+              <h3 className="text-sm font-bold text-white">AI Reasoning Layer</h3>
+            </div>
+            <div className="ml-7 space-y-0.5 text-xs text-gray-100">
+              <p>• Hybrid Retrieval (SPARQL + Embeddings)</p>
+              <p>• LLM Controller for Natural-Language Reasoning</p>
+              <p>• Recommendation Engine for Test Plans</p>
+            </div>
+          </motion.div>
+
+          <div className="flex justify-center"><div className="text-xl text-purple-400">↓</div></div>
+
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.5 }}
+            className="bg-gradient-to-r from-[#1e293b] to-[#2a2f45] p-3 rounded-lg shadow-lg border-2 border-[#7c3aed]"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">💻</span>
+              <h3 className="text-sm font-bold text-purple-300">Web & API Interface</h3>
+            </div>
+            <p className="text-xs text-gray-300 ml-7">FastAPI + React Dashboard</p>
+          </motion.div>
+
+          <div className="flex justify-center"><div className="text-xl text-purple-400">↓</div></div>
+
+          <motion.div
+            variants={layerVariants}
+            initial="hidden"
+            animate="show"
+            transition={{ delay: 0.6 }}
+            className="bg-gradient-to-r from-[#1e293b] to-[#2a2f45] p-3 rounded-lg shadow-lg border-2 border-gray-500"
+          >
+            <div className="flex items-center gap-2">
+              <span className="text-xl">📈</span>
+              <h3 className="text-sm font-bold text-gray-300">MLOps | Monitoring | Audit Trails</h3>
+            </div>
+          </motion.div>
         </div>
 
-        {/* Layer 2: Data Ingestion */}
+        {/* Key Insights */}
         <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
-          transition={{ delay: 0.4 }}
-          className="bg-gradient-to-r from-[#1a1f35] to-[#2a2f45] p-5 rounded-lg shadow-lg border-2 border-[#00e5ff]"
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">⚙️</span>
-            <h3 className="text-xl font-bold text-cyan-300">Data Ingestion & Normalisation Layer</h3>
-          </div>
-          <p className="text-sm text-gray-300 ml-11">
-            ETL, schema mapping, quality checks
-          </p>
-        </motion.div>
-
-        {/* Arrow */}
-        <div className="flex justify-center">
-          <div className="text-3xl text-cyan-400">↓</div>
-        </div>
-
-        {/* Layer 3: Semantic Knowledge */}
-        <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
-          transition={{ delay: 0.6 }}
-          className="bg-gradient-to-r from-[#2554C7] to-[#1a4a99] p-5 rounded-lg shadow-lg border-2 border-[#00e5ff] shadow-cyan-500/30"
-        >
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">🗂️</span>
-            <h3 className="text-xl font-bold text-white">Semantic Knowledge Layer</h3>
-          </div>
-          <div className="ml-11 space-y-1 text-sm text-gray-100">
-            <p>• Ontology (vehicles, tests, conditions)</p>
-            <p>• Knowledge Graph (Neo4j)</p>
-            <p>• Vector Index (pgvector)</p>
-          </div>
-        </motion.div>
-
-        {/* Arrow */}
-        <div className="flex justify-center">
-          <div className="text-3xl text-cyan-400">↓</div>
-        </div>
-
-        {/* Layer 4: AI Reasoning */}
-        <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
-          className="bg-gradient-to-r from-[#C3002F] to-[#8b0020] p-5 rounded-lg shadow-lg border-2 border-[#ff1744] shadow-red-500/30"
+          className="mt-3 grid md:grid-cols-2 gap-2"
         >
-          <div className="flex items-center gap-3 mb-3">
-            <span className="text-3xl">🤖</span>
-            <h3 className="text-xl font-bold text-white">AI Reasoning Layer</h3>
+          <div className="bg-[#1e293b]/80 backdrop-blur-sm p-2 rounded border border-[#6366f1]">
+            <p className="text-gray-200 text-xs italic">
+              "The <strong className="text-purple-300">ontology</strong> provides structure, the <strong className="text-purple-300">graph</strong> connects knowledge, and the <strong className="text-purple-300">AI layer</strong> reasons over it."
+            </p>
           </div>
-          <div className="ml-11 space-y-1 text-sm text-gray-100">
-            <p>• Hybrid Retrieval (SPARQL + Embeddings)</p>
-            <p>• LLM Controller for Natural-Language Reasoning</p>
-            <p>• Recommendation Engine for Test Plans</p>
-          </div>
-        </motion.div>
-
-        {/* Arrow */}
-        <div className="flex justify-center">
-          <div className="text-3xl text-cyan-400">↓</div>
-        </div>
-
-        {/* Layer 5: Web & API */}
-        <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
-          transition={{ delay: 1.0 }}
-          className="bg-gradient-to-r from-[#1a1f35] to-[#2a2f45] p-5 rounded-lg shadow-lg border-2 border-[#ff9800]"
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">💻</span>
-            <h3 className="text-xl font-bold text-[#ff9800]">Web & API Interface</h3>
-          </div>
-          <p className="text-sm text-gray-300 ml-11">
-            FastAPI + React Dashboard
-          </p>
-        </motion.div>
-
-        {/* Arrow */}
-        <div className="flex justify-center">
-          <div className="text-3xl text-cyan-400">↓</div>
-        </div>
-
-        {/* Layer 6: MLOps */}
-        <motion.div
-          variants={layerVariants}
-          initial="hidden"
-          animate="show"
-          transition={{ delay: 1.2 }}
-          className="bg-gradient-to-r from-[#1a1f35] to-[#2a2f45] p-5 rounded-lg shadow-lg border-2 border-gray-500"
-        >
-          <div className="flex items-center gap-3 mb-2">
-            <span className="text-3xl">📈</span>
-            <h3 className="text-xl font-bold text-gray-300">MLOps | Monitoring | Audit Trails</h3>
+          <div className="bg-[#1e293b]/80 backdrop-blur-sm p-2 rounded border border-[#a855f7]">
+            <p className="text-gray-200 text-xs italic">
+              "The system acts like a <strong className="text-purple-400">memory that never forgets</strong> — it remembers every test and learns from it."
+            </p>
           </div>
         </motion.div>
       </div>
-
-      {/* Key Insights */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5 }}
-        className="mt-8 grid md:grid-cols-2 gap-4"
-      >
-        <div className="bg-[#1a1f35]/80 backdrop-blur-sm p-4 rounded-lg border border-[#2554C7]">
-          <p className="text-gray-200 text-sm italic">
-            "The <strong className="text-cyan-300">ontology</strong> provides structure, the <strong className="text-cyan-300">graph</strong> connects knowledge, and the <strong className="text-cyan-300">AI layer</strong> reasons over it."
-          </p>
-        </div>
-        <div className="bg-[#1a1f35]/80 backdrop-blur-sm p-4 rounded-lg border border-[#C3002F]">
-          <p className="text-gray-200 text-sm italic">
-            "The system acts like a <strong className="text-[#ff1744]">memory that never forgets</strong> — it remembers every test and learns from it."
-          </p>
-        </div>
-      </motion.div>
     </div>
   );
 }
