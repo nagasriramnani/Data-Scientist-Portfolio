@@ -64,7 +64,7 @@ const Index = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {/* Projects Rows */}
-          <motion.div variants={sectionVariants} id="projects" className="relative z-30 space-y-2 md:space-y-6 -mt-32 md:-mt-48 pb-12">
+          <motion.div variants={sectionVariants} id="projects" className="relative z-30 space-y-2 md:space-y-6 mt-10 md:-mt-48 pb-12">
             <RowSection title="Project Series">
               {projects.map((project) => (
                 <ProjectCard key={project.id} project={project} onClick={handleProjectClick} />
