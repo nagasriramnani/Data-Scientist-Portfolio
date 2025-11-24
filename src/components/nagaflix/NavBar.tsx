@@ -70,7 +70,7 @@ export default function NavBar() {
                         className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold"
                         asChild
                     >
-                        <a href="/NAGA_RAM_KOCHETTI_-_Resume_-_Data_Scientist.pdf" download>
+                        <a href="/NAGA_SRI_RAM__KOCHETTI_-_AI_Experience_Analyst__Conversational_Analytics__Customer_Insight__NLP_&_LLM_Evaluation.pdf" download>
                             <Download className="mr-2 h-4 w-4" />
                             Download CV
                         </a>
@@ -108,7 +108,7 @@ export default function NavBar() {
                             className="bg-primary text-primary-foreground hover:bg-primary/90 font-bold w-full"
                             asChild
                         >
-                            <a href="/NAGA_RAM_KOCHETTI_-_Resume_-_Data_Scientist.pdf" download>
+                            <a href="/NAGA_SRI_RAM__KOCHETTI_-_AI_Experience_Analyst__Conversational_Analytics__Customer_Insight__NLP_&_LLM_Evaluation.pdf" download>
                                 <Download className="mr-2 h-4 w-4" />
                                 Download CV
                             </a>
