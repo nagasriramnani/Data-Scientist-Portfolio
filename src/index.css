@@ -2,55 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* NagaFlix Design System */
 
 @layer base {
   :root {
-    --background: 220 45% 4%;
-    --foreground: 180 50% 92%;
+    /* Netflix-inspired Dark Theme */
+    --background: 240 10% 4%;
+    /* #0a0a0b - Deep dark background */
+    --foreground: 0 0% 95%;
+    /* Off-white text */
 
-    --card: 220 40% 8%;
-    --card-foreground: 180 50% 92%;
+    --card: 240 10% 6%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 45% 6%;
-    --popover-foreground: 180 50% 92%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 190 95% 50%;
-    --primary-foreground: 220 45% 4%;
+    --primary: 180 100% 50%;
+    /* Neon Cyan */
+    --primary-foreground: 240 10% 4%;
 
-    --secondary: 220 30% 15%;
-    --secondary-foreground: 180 60% 85%;
+    --secondary: 240 5% 15%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 25% 18%;
-    --muted-foreground: 180 20% 60%;
+    --muted: 240 5% 20%;
+    --muted-foreground: 240 5% 65%;
 
     --accent: 180 100% 50%;
-    --accent-foreground: 220 45% 4%;
+    /* Cyan Accent */
+    --accent-foreground: 240 10% 4%;
 
-    --destructive: 0 75% 55%;
+    --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 30% 15%;
-    --input: 220 30% 15%;
-    --ring: 190 95% 50%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
+    /* Sharper corners for Netflix feel */
 
-    /* Futuristic gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(190, 95%, 50%), hsl(220, 85%, 60%));
-    --gradient-glow: linear-gradient(180deg, hsl(190, 100%, 50% / 0.2), hsl(220, 90%, 40% / 0.1));
-    --gradient-neural: radial-gradient(circle, hsl(190, 95%, 50% / 0.15), transparent 70%);
-    
-    /* Shadows and effects */
-    --shadow-neon: 0 0 20px hsl(190, 95%, 50% / 0.5), 0 0 40px hsl(190, 95%, 50% / 0.3);
-    --shadow-card: 0 8px 32px hsl(220, 50%, 2% / 0.6);
-    --glow-cyan: 0 0 30px hsl(190, 95%, 50% / 0.4);
-    
-    /* Transitions */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* NagaFlix Specifics */
+    --netflix-red: 357 92% 47%;
+    --naga-cyan: 180 100% 50%;
   }
 }
 
@@ -61,62 +55,58 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
     scroll-behavior: smooth;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
 }
 
 @layer utilities {
-  .glow-text {
-    text-shadow: 0 0 20px hsl(var(--accent) / 0.6), 0 0 40px hsl(var(--accent) / 0.4);
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
-  .neon-border {
-    border: 1px solid hsl(var(--accent) / 0.5);
-    box-shadow: 0 0 10px hsl(var(--accent) / 0.3), inset 0 0 10px hsl(var(--accent) / 0.1);
+  .text-shadow-lg {
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.8);
   }
 
-  .glass-effect {
-    background: hsl(var(--card) / 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.3);
+  .text-glow {
+    text-shadow: 0 0 10px hsla(var(--primary), 0.5), 0 0 20px hsla(var(--primary), 0.3);
   }
 
-  .neural-glow {
-    animation: neural-pulse 3s ease-in-out infinite;
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 
-  @keyframes neural-pulse {
-    0%, 100% {
-      opacity: 0.6;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 1;
-      transform: scale(1.05);
-    }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
+  .glass-panel {
+    @apply bg-black/60 backdrop-blur-md border border-white/10;
   }
 
-  .float-animation {
-    animation: float 6s ease-in-out infinite;
+  /* Cinematic Utilities */
+  .tracking-cinematic {
+    letter-spacing: 0.15em;
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .poster-aspect {
+    aspect-ratio: 2 / 3;
   }
 }
