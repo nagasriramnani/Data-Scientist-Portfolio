@@ -41,20 +41,59 @@ export default function Overlay({ progress }: OverlayProps) {
                 </a>
             </motion.div>
 
-            {/* SECTION 1: Bottom Center Aligned */}
+            {/* SECTION 1: Hero — Lower Third, Awwwards Typography */}
             <motion.div
                 style={{ opacity: opacity1, y: y1 }}
-                className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-20 md:pb-28"
+                className="absolute inset-0 flex flex-col items-center justify-end text-center px-4 pb-16 md:pb-24"
             >
-                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white to-neutral-400">
-                    Naga Sri Ram Kochetti
-                </h1>
-                <h2 className="text-2xl md:text-4xl text-[#00C8FF] mb-6 font-medium tracking-wide">
+                {/* Name — Massive Clash Display */}
+                <motion.h1
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    className="text-white leading-[0.9]"
+                    style={{
+                        fontFamily: "'Clash Display', var(--font-display), sans-serif",
+                        fontWeight: 700,
+                        fontSize: "clamp(2.5rem, 10vw, 10rem)",
+                        letterSpacing: "-0.02em",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
+                    Ram<span className="text-[#00C8FF]">.</span>
+                </motion.h1>
+
+                {/* Subtitle — Small, uppercase, cyan */}
+                <motion.h2
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                    className="mt-6 md:mt-8"
+                    style={{
+                        fontSize: "clamp(0.75rem, 1.2vw, 1.25rem)",
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase" as const,
+                        color: "#00C8FF",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
                     AI Systems Architect · Researcher
-                </h2>
-                <p className="max-w-2xl text-lg md:text-xl text-neutral-300 font-light">
+                </motion.h2>
+
+                {/* Tagline — Muted, small */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 1 }}
+                    className="mt-5 md:mt-6 max-w-[500px]"
+                    style={{
+                        fontSize: "1rem",
+                        color: "#A0A0A0",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
                     I build intelligent systems that reason, scale, and perform under pressure.
-                </p>
+                </motion.p>
             </motion.div>
 
             {/* SECTION 2: Left Aligned */}
@@ -62,10 +101,18 @@ export default function Overlay({ progress }: OverlayProps) {
                 style={{ opacity: opacity2, y: y2 }}
                 className="absolute inset-0 flex flex-col items-start justify-center px-8 md:px-24"
             >
-                <h2 className="max-w-4xl text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] to-[#FF6B2B]">
+                <h2
+                    className="max-w-4xl mb-6 font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] to-[#FF6B2B]"
+                    style={{
+                        fontFamily: "'Clash Display', var(--font-display), sans-serif",
+                        fontSize: "clamp(2rem, 5vw, 4rem)",
+                        letterSpacing: "-0.02em",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
                     Turning research papers into production systems — that&apos;s my thing.
                 </h2>
-                <p className="max-w-2xl text-xl md:text-2xl text-neutral-300">
+                <p className="max-w-2xl text-xl md:text-2xl text-neutral-300" style={{ textShadow: "0 2px 40px rgba(0,0,0,0.8)" }}>
                     Currently engineering Azure AI platforms at DWP & building LLM-powered RAG APIs at Pareto.AI.
                 </p>
             </motion.div>
@@ -75,10 +122,18 @@ export default function Overlay({ progress }: OverlayProps) {
                 style={{ opacity: opacity3, y: y3 }}
                 className="absolute inset-0 flex flex-col items-end justify-center text-right px-8 md:px-24"
             >
-                <h2 className="max-w-3xl text-4xl md:text-6xl font-bold mb-6">
+                <h2
+                    className="max-w-3xl mb-6 font-bold"
+                    style={{
+                        fontFamily: "'Clash Display', var(--font-display), sans-serif",
+                        fontSize: "clamp(2rem, 5vw, 4rem)",
+                        letterSpacing: "-0.02em",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
                     Bridging AI Research & Enterprise Engineering
                 </h2>
-                <p className="max-w-xl text-xl md:text-2xl text-[#FF6B2B]">
+                <p className="max-w-xl text-xl md:text-2xl text-[#FF6B2B]" style={{ textShadow: "0 2px 40px rgba(0,0,0,0.8)" }}>
                     MSc Big Data & HPC · Looking for PhD in AI/ML<br />
                     <span className="text-neutral-300 text-lg md:text-xl mt-4 block">Open to Senior AI Engineer roles</span>
                 </p>
@@ -89,7 +144,15 @@ export default function Overlay({ progress }: OverlayProps) {
                 style={{ opacity: opacity4, y: y4 }}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 pointer-events-auto"
             >
-                <h2 className="text-5xl md:text-7xl font-bold mb-12">
+                <h2
+                    className="mb-12 font-bold"
+                    style={{
+                        fontFamily: "'Clash Display', var(--font-display), sans-serif",
+                        fontSize: "clamp(2rem, 5vw, 4.5rem)",
+                        letterSpacing: "-0.02em",
+                        textShadow: "0 2px 40px rgba(0,0,0,0.8)",
+                    }}
+                >
                     Let&apos;s build something extraordinary.
                 </h2>
                 <div className="flex gap-6 z-20">
