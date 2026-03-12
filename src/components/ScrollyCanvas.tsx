@@ -15,7 +15,7 @@ export default function ScrollyCanvas() {
 
     // Load all images on mount
     useEffect(() => {
-        let loadedCount = 0;
+
         const loadedImages: HTMLImageElement[] = [];
         for (let i = INITIAL_FRAME; i < FRAME_COUNT; i++) {
             const img = new Image();
@@ -47,7 +47,7 @@ export default function ScrollyCanvas() {
         const ctx = canvasRef.current.getContext("2d");
         if (!ctx) return;
 
-        let frameToDraw = Math.floor(latest);
+        const frameToDraw = Math.floor(latest);
         let img = images[frameToDraw];
 
         // Find the nearest loaded image to draw if the target isn't loaded yet
