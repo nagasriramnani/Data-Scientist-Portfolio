@@ -2,12 +2,6 @@
 
 import { motion } from "framer-motion";
 
-interface SkillCategory {
-    category: string;
-    color: string;
-    skills: string[];
-}
-
 // Maps display names to Simple Icons slugs
 function logoSlug(name: string): string {
     const map: Record<string, string> = {
@@ -48,52 +42,67 @@ function logoSlug(name: string): string {
     return map[name] || name.toLowerCase().replace(/[\s.]/g, "");
 }
 
-const skillCategories: SkillCategory[] = [
+interface BentoCategory {
+    index: string;
+    category: string;
+    skills: string[];
+    span: string;
+    flagship?: boolean;
+}
+
+const bento: BentoCategory[] = [
     {
-        category: "Languages",
-        color: "#00C8FF",
-        skills: ["Python", "JavaScript", "TypeScript", "Bash", "SQL"],
-    },
-    {
+        index: "01",
         category: "AI / LLM & Agentic",
-        color: "#FF6B2B",
         skills: [
             "OpenAI", "Azure OpenAI", "AWS Bedrock", "LangChain", "LangGraph",
-            "RAG", "FAISS", "pgvector", "Copilot Studio", "Prompt Engineering",
-            "Multi-Agent Systems", "MCP", "HuggingFace", "TensorFlow", "PyTorch",
-            "scikit-learn", "OpenCV",
+            "RAG", "FAISS", "pgvector", "Copilot Studio", "MCP", "HuggingFace",
+            "Multi-Agent Systems", "Prompt Engineering",
         ],
+        span: "md:col-span-2 md:row-span-2",
+        flagship: true,
     },
     {
-        category: "Microsoft Power Platform",
-        color: "#00C8FF",
-        skills: ["Power Platform", "Power Automate", "Dataverse", "API Connectors", "Power BI"],
+        index: "02",
+        category: "Languages",
+        skills: ["Python", "JavaScript", "TypeScript", "SQL", "Bash", "Java"],
+        span: "md:col-span-2",
     },
     {
-        category: "Cloud / DevOps / ALM",
-        color: "#FF6B2B",
+        index: "03",
+        category: "ML Frameworks",
+        skills: ["TensorFlow", "PyTorch", "scikit-learn", "OpenCV"],
+        span: "",
+    },
+    {
+        index: "04",
+        category: "Backend & APIs",
+        skills: ["FastAPI", "Flask", "Node.js", "Express", "REST APIs", "Microservices", "JWT Auth"],
+        span: "",
+    },
+    {
+        index: "05",
+        category: "Cloud & DevOps",
         skills: [
             "Azure", "Data Factory", "Databricks", "Azure SQL", "Key Vault",
-            "Azure DevOps", "CI/CD", "Docker", "Kubernetes", "AWS", "S3",
-            "Lambda", "SageMaker", "CloudWatch", "Terraform",
+            "Azure DevOps", "CI/CD", "Docker", "Kubernetes", "Terraform", "AWS",
         ],
+        span: "md:col-span-2",
     },
     {
-        category: "Backend / Integration",
-        color: "#00C8FF",
+        index: "06",
+        category: "Data & Governance",
         skills: [
-            "FastAPI", "Flask", "Node.js", "Express", "REST APIs",
-            "Microservices", "Event-Driven", "JWT Auth", "MongoDB", "Redis",
+            "PySpark", "Pandas", "PostgreSQL", "MySQL", "MongoDB", "Redis",
+            "Vector Databases", "Kafka", "Airflow", "Elasticsearch", "Power BI", "Tableau",
         ],
+        span: "md:col-span-2",
     },
     {
-        category: "Data / Governance",
-        color: "#FF6B2B",
-        skills: [
-            "PySpark", "Pandas", "PostgreSQL", "MySQL", "NoSQL", "Vector Databases",
-            "Power BI", "Tableau", "Kafka", "Airflow", "Elasticsearch",
-            "Data Lineage", "Feature Stores",
-        ],
+        index: "07",
+        category: "Microsoft Power Platform",
+        skills: ["Power Platform", "Power Automate", "Dataverse", "API Connectors", "Copilot Studio"],
+        span: "",
     },
 ];
 
@@ -106,26 +115,24 @@ export default function Skills() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8 }}
-                    className="mb-20 text-center"
+                    className="mb-16 flex items-end justify-between"
                 >
                     <h2
-                        className="text-4xl md:text-6xl font-bold mb-4"
+                        className="text-4xl md:text-6xl font-bold"
                         style={{ fontFamily: "'Clash Display', var(--font-display), sans-serif" }}
                     >
-                        Tech <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00C8FF] to-[#FF6B2B]">Arsenal</span>
+                        Tech <span className="text-[#FF5A1F]">Arsenal</span>
                     </h2>
-                    <p className="text-neutral-400 text-lg max-w-xl mx-auto">
-                        Tools and technologies I use to turn ideas into intelligent systems.
+                    <p className="hidden md:block font-jetbrains-mono text-xs tracking-[0.2em] uppercase text-neutral-500">
+                        7 domains · 50+ tools
                     </p>
                 </motion.div>
 
                 {/* Infinite Scrolling Logo Marquee */}
-                <div className="relative mb-20 overflow-hidden">
-                    {/* Fade edges */}
-                    <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0A0A0A]/80 to-transparent pointer-events-none" />
-                    <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0A0A0A]/80 to-transparent pointer-events-none" />
+                <div className="relative mb-16 overflow-hidden">
+                    <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#070707]/80 to-transparent pointer-events-none" />
+                    <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#070707]/80 to-transparent pointer-events-none" />
 
-                    {/* Row 1 — scrolls left */}
                     <div className="flex mb-4 marquee-row">
                         <div className="flex shrink-0 animate-marquee gap-6 pr-6">
                             {["Python", "JavaScript", "TypeScript", "TensorFlow", "PyTorch", "Docker", "Kubernetes", "FastAPI", "Node.js", "PostgreSQL", "MongoDB", "Redis", "LangChain", "HuggingFace"].map((name) => (
@@ -147,7 +154,6 @@ export default function Skills() {
                         </div>
                     </div>
 
-                    {/* Row 2 — scrolls right */}
                     <div className="flex marquee-row">
                         <div className="flex shrink-0 animate-marquee-reverse gap-6 pr-6">
                             {["Spark", "Kafka", "Airflow", "Pandas", "Terraform", "Flask", "Express", "Databricks", "Elasticsearch", "scikit-learn", "OpenCV", "Bash", "MySQL"].map((name) => (
@@ -170,56 +176,41 @@ export default function Skills() {
                     </div>
                 </div>
 
-                <div className="space-y-14">
-                    {skillCategories.map((group, idx) => (
+                {/* Bento Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[minmax(150px,auto)] gap-4">
+                    {bento.map((group, idx) => (
                         <motion.div
                             key={group.category}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={{ opacity: 0, y: 24 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: idx * 0.08 }}
+                            transition={{ duration: 0.5, delay: idx * 0.06 }}
+                            className={`group flex flex-col justify-between rounded-2xl border p-6 transition-all duration-300 ${group.span} ${
+                                group.flagship
+                                    ? "bg-white/[0.06] border-white/15 hover:border-[#FF5A1F]"
+                                    : "bg-white/[0.03] border-white/10 hover:border-[#FF5A1F] hover:bg-white/[0.05]"
+                            }`}
                         >
-                            {/* Category Header */}
-                            <div className="flex items-center gap-4 mb-6">
-                                <div
-                                    className="w-3 h-3 rounded-full shrink-0"
-                                    style={{ backgroundColor: group.color, boxShadow: `0 0 12px ${group.color}` }}
-                                />
-                                <h3 className="text-lg md:text-xl font-bold tracking-wide" style={{ color: group.color }}>
+                            <div className="flex items-start justify-between mb-4">
+                                <span className="font-jetbrains-mono text-xs text-[#FF5A1F]">{group.index}</span>
+                            </div>
+                            <div className="mt-auto">
+                                <h3
+                                    className={`font-bold mb-4 ${group.flagship ? "text-2xl md:text-3xl" : "text-xl"}`}
+                                    style={{ fontFamily: "'Clash Display', var(--font-display), sans-serif" }}
+                                >
                                     {group.category}
                                 </h3>
-                                <div className="flex-1 h-px bg-gradient-to-r from-white/10 to-transparent" />
-                            </div>
-
-                            {/* Skill Pills — Text Only */}
-                            <div className="flex flex-wrap gap-3 pl-7">
-                                {group.skills.map((skill, i) => (
-                                    <motion.span
-                                        key={`${group.category}-${skill}`}
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.3, delay: i * 0.02 }}
-                                        className="px-5 py-2.5 rounded-xl text-sm font-medium
-                               bg-white/[0.04] border border-white/[0.08] text-neutral-300
-                               hover:text-white cursor-default transition-all duration-300
-                               hover:scale-105"
-                                        onMouseEnter={(e) => {
-                                            const el = e.currentTarget;
-                                            el.style.borderColor = group.color;
-                                            el.style.boxShadow = `0 0 20px ${group.color}25, inset 0 0 15px ${group.color}08`;
-                                            el.style.background = `linear-gradient(135deg, ${group.color}12, transparent)`;
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            const el = e.currentTarget;
-                                            el.style.borderColor = "rgba(255,255,255,0.08)";
-                                            el.style.boxShadow = "none";
-                                            el.style.background = "rgba(255,255,255,0.04)";
-                                        }}
-                                    >
-                                        {skill}
-                                    </motion.span>
-                                ))}
+                                <div className="flex flex-wrap gap-2">
+                                    {group.skills.map((skill) => (
+                                        <span
+                                            key={`${group.category}-${skill}`}
+                                            className="font-jetbrains-mono text-[0.72rem] text-neutral-300 border border-white/10 rounded-lg px-2.5 py-1 group-hover:border-white/20 transition-colors"
+                                        >
+                                            {skill}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </motion.div>
                     ))}

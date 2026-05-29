@@ -79,7 +79,7 @@ export default function ScrollyCanvas() {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         // Draw background color (optional if canvas is fully covered, but good for safety)
-        ctx.fillStyle = "#0A0A0A";
+        ctx.fillStyle = "#070707";
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         ctx.drawImage(
@@ -114,7 +114,7 @@ export default function ScrollyCanvas() {
             const centerShift_y = (canvas.height - img.height * ratio) / 2;
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#0A0A0A";
+            ctx.fillStyle = "#070707";
             ctx.fillRect(0, 0, canvas.width, canvas.height);
             ctx.drawImage(
                 img,
@@ -170,10 +170,10 @@ export default function ScrollyCanvas() {
     }, [loaded, images, frameIndex]);
 
     return (
-        <div ref={containerRef} className="relative h-[500vh] w-full bg-[#0A0A0A]">
+        <div ref={containerRef} className="relative h-[500vh] w-full bg-[#070707]">
             <div className="sticky top-0 h-screen w-full overflow-hidden">
                 {!loaded && (
-                    <div className="absolute inset-0 z-50 flex items-center justify-center bg-[#0A0A0A]">
+                    <div className="absolute inset-0 z-50 flex items-center justify-center bg-[#070707]">
                         <div className="text-white text-lg font-jetbrains-mono tracking-widest animate-pulse">
                             INITIALIZING AI UNIVERSE...
                         </div>

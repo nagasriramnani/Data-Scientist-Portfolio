@@ -26,6 +26,7 @@ export default function Navbar() {
 
     const links = [
         { name: "About", href: "#about" },
+        { name: "Currently", href: "#currently" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
         { name: "Experience", href: "#experience" },
@@ -40,7 +41,7 @@ export default function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`fixed top-0 inset-x-0 z-50 flex items-center justify-center pt-6 px-4 pb-4 transition-colors duration-300 ${scrolled ? "bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+            className={`fixed top-0 inset-x-0 z-50 flex items-center justify-center pt-6 px-4 pb-4 transition-colors duration-300 ${scrolled ? "bg-[#070707]/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
                 }`}
         >
             <nav className="flex items-center gap-6 md:gap-10 border border-white/10 rounded-full px-8 py-3 bg-white/5 backdrop-blur-md">
@@ -48,7 +49,7 @@ export default function Navbar() {
                     <a
                         key={link.name}
                         href={link.href}
-                        className="text-sm font-jetbrains-mono font-medium text-neutral-300 hover:text-[#00C8FF] transition-colors"
+                        className="text-sm font-jetbrains-mono font-medium text-neutral-300 hover:text-[#FF5A1F] transition-colors"
                     >
                         {link.name}
                     </a>
