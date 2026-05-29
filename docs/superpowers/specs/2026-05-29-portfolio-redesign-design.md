@@ -59,16 +59,16 @@ All copy is sourced from the updated README.
 5. **ML Consultant** · Mars Inno India · *~2020*
 6. **B.Tech Computer Science & Engineering** · GVP College of Engineering, Vizag · *2018 – 2022*
 
-### 3.5 Projects (6)
+### 3.4 Projects (6)
 DevVerse — The AI Metaverse · Face Super-Resolution Identity Preservation ·
 QueenAI Enterprise · Digital Twin for Autonomous Driving (MSc) · RunFit ·
 Smart-Hire AI Recruiter. Copy/tags per README §Featured Projects.
 
-### 3.6 Skills (7 domains, bento)
+### 3.5 Skills (7 domains, bento)
 Languages · AI/LLM & Agentic (flagship) · ML Frameworks · Cloud & DevOps ·
 Backend & APIs · Data & Governance · Microsoft Power Platform. Tool lists per README §Tech Stack.
 
-### 3.7 Open To / Contact
+### 3.6 Open To / Contact
 PhD in AI/ML (2026/27) · Senior AI Engineer · AI Product Engineer · Open-source.
 Email, Portfolio, LinkedIn, GitHub, LeetCode per README §Contact.
 
@@ -102,7 +102,7 @@ Each component is independently understandable and restyled in isolation.
 | File | Change |
 |---|---|
 | `src/app/globals.css` | New palette vars; recolor marquee/scrollbar; keep marquee keyframes |
-| `tailwind.config.ts` | Add `accent` / `accent2` color tokens |
+| `tailwind.config.ts` | Add single `accent` color token |
 | `src/app/layout.tsx` | Metadata: Belfast, updated description; fonts unchanged |
 | `src/components/Overlay.tsx` | New subtitle (`AI Product Engineer · KTP Associate`); update section 2/3/4 copy to current framing; recolor to single orange accent |
 | `src/components/Currently.tsx` | **NEW** — "Currently" role card |
