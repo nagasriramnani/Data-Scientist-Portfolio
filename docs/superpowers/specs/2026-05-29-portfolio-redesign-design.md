@@ -24,14 +24,13 @@ Components are restyled and re-content'd.
 | Area | Decision |
 |---|---|
 | Redesign scope | Refresh — keep scrollytelling hero + Canva sequence, modernize everywhere |
-| Visual identity | Editorial Mono — near-monochrome, big editorial type, generous negative space |
+| Visual identity | Editorial Mono — near-monochrome, big editorial type, generous negative space, **single accent** |
 | Base colors | Background `#070707`, foreground `#FFFFFF`, greys `#888` / `#bbb` |
-| **Primary accent** | **Electric Cyan `#00E5FF`** (blue) — name dot, headers, primary links, hovers |
-| **Secondary accent** | **Signal Orange `#FF5A1F`** — used sparingly (numbering, secondary highlights) |
+| **Accent (single)** | **Signal Orange `#FF5A1F`** — the ONLY color. Name dot, headers, links, hovers, numbering. Cyan is removed entirely. |
 | Skills UI | **Bento Grid** — asymmetric tiles; AI/Agentic gets the flagship tile |
 | Hero subtitle | `AI Product Engineer · KTP Associate` |
 | New role feature | Dedicated **"Currently" card** placed between hero and Skills |
-| Experience/Education | **Split** into two distinct blocks |
+| Experience/Education | **One combined chronological timeline** (jobs + degrees together) |
 | Fonts | Clash Display (display), Inter (body), JetBrains Mono (labels/mono) — unchanged |
 
 ---
@@ -52,15 +51,13 @@ All copy is sourced from the updated README.
 > A Knowledge Transfer Partnership bridging academic AI research at Ulster University
 > with real-world AI product development at The Odyssey Trust.
 
-### 3.3 Experience (jobs)
+### 3.3 Experience & Education (one combined chronological timeline)
 1. **KTP Associate — AI Product Engineer** · Ulster University & The Odyssey Trust · Belfast · *June 2026 – Present*
 2. **Freelance GenAI Specialist** · Pareto.AI · *2025* — LLM-powered RAG APIs & generative AI pipelines
 3. **Data & AI Support Associate** · DWP (UK Government) · Belfast · *2024 – April 2026* — Azure AI platforms, Power Platform, Azure OpenAI at scale
-4. **ML Consultant** · Mars Inno India · *~2020*
-
-### 3.4 Education (split block)
-1. **MSc Big Data & High Performance Computing** · University of Liverpool · *2022 – 2024* — Dissertation: Digital Twin for Autonomous Driving (D2RL edge-case RL in CARLA)
-2. **B.Tech Computer Science & Engineering** · GVP College of Engineering, Vizag · *2018 – 2022*
+4. **MSc Big Data & High Performance Computing** · University of Liverpool · *2022 – 2024* — Dissertation: Digital Twin for Autonomous Driving (D2RL edge-case RL in CARLA)
+5. **ML Consultant** · Mars Inno India · *~2020*
+6. **B.Tech Computer Science & Engineering** · GVP College of Engineering, Vizag · *2018 – 2022*
 
 ### 3.5 Projects (6)
 DevVerse — The AI Metaverse · Face Super-Resolution Identity Preservation ·
@@ -85,17 +82,16 @@ Define accents as CSS variables so the single-source-of-truth lives in `globals.
 :root {
   --background: #070707;
   --foreground: #ffffff;
-  --accent: #00E5FF;        /* primary — blue/cyan */
-  --accent-2: #FF5A1F;      /* secondary — orange, sparing */
+  --accent: #FF5A1F;        /* the ONLY accent — signal orange */
   --muted: #888888;
 }
 ```
 
-- Replace all hardcoded `#00C8FF` → `--accent` (`#00E5FF`) and keep `#FF6B2B` →
-  `--accent-2` (`#FF5A1F`) usages but reduce their frequency.
-- Tailwind config extends `colors.accent` / `colors.accent2` mapped to the vars.
-- Gradients that previously blended cyan→orange become mostly cyan, with orange as
-  an occasional secondary stop.
+- Replace ALL hardcoded `#00C8FF` (cyan) AND `#FF6B2B` (old orange) → `--accent`
+  (`#FF5A1F`). No cyan remains anywhere.
+- Tailwind config extends `colors.accent` mapped to the var.
+- Gradients that previously blended cyan→orange become a single-hue orange fade
+  (orange → transparent) or are flattened to solid orange / white.
 
 ---
 
@@ -108,14 +104,14 @@ Each component is independently understandable and restyled in isolation.
 | `src/app/globals.css` | New palette vars; recolor marquee/scrollbar; keep marquee keyframes |
 | `tailwind.config.ts` | Add `accent` / `accent2` color tokens |
 | `src/app/layout.tsx` | Metadata: Belfast, updated description; fonts unchanged |
-| `src/components/Overlay.tsx` | New subtitle (`AI Product Engineer · KTP Associate`); update section 2/3/4 copy to current framing; recolor cyan-primary |
+| `src/components/Overlay.tsx` | New subtitle (`AI Product Engineer · KTP Associate`); update section 2/3/4 copy to current framing; recolor to single orange accent |
 | `src/components/Currently.tsx` | **NEW** — "Currently" role card |
 | `src/components/Skills.tsx` | Rebuild as **bento grid** (7 tiles, AI flagship spans 2×2); recolor; keep/refresh marquee |
-| `src/components/Timeline.tsx` | Split into **Experience** + **Education**; KTP as top entry; recolor |
-| `src/components/Projects.tsx` | Refresh copy/tags; recolor mono+cyan |
+| `src/components/Timeline.tsx` | One combined Experience & Education timeline; KTP as top entry; recolor to orange |
+| `src/components/Projects.tsx` | Refresh copy/tags; recolor mono + orange |
 | `src/components/Contact.tsx` | Belfast; "Open To" list per README; recolor |
-| `src/components/Navbar.tsx` | Add "Currently" link; recolor hovers to cyan |
-| `src/app/page.tsx` | Insert `<Currently/>` between hero and Skills; section order: Hero → Currently → Skills → Projects → Experience → Education → Contact |
+| `src/components/Navbar.tsx` | Add "Currently" link; recolor hovers to orange |
+| `src/app/page.tsx` | Insert `<Currently/>` between hero and Skills; section order: Hero → Currently → Skills → Projects → Experience & Education → Contact |
 
 `ScrollyCanvas.tsx` and `SmoothFollower.tsx` are unchanged except cursor/accent color.
 
@@ -124,7 +120,7 @@ Each component is independently understandable and restyled in isolation.
 - **AI / LLM & Agentic** = flagship tile spanning 2 cols × 2 rows, brighter border.
 - Other domains are 1×1 or wide 2×1 tiles holding category label + tag chips.
 - Tile hover: border → `--accent`, subtle background lift.
-- Each tile: mono index (`01`–`07`, in orange), Clash Display category name, mono tag chips.
+- Each tile: mono index (`01`–`07`, in accent orange), Clash Display category name, mono tag chips.
 - Existing logo marquee retained above the grid (recolored), or dropped if it clutters — implementer's call during build, default = keep.
 
 ### 5.2 Currently card spec
@@ -132,7 +128,7 @@ Each component is independently understandable and restyled in isolation.
   500vh scroll section, before Skills.
 - Left: small mono kicker "CURRENTLY"; large Clash Display role line; sub-line with
   company, location, dates. Right (desktop): partner names / KTP badge.
-- Cyan accent on the kicker + a thin top border; orange used only for the live "●" dot.
+- Orange accent on the kicker, the live "●" dot, and a thin top border.
 - Framer Motion fade-in on view.
 
 ---
@@ -140,9 +136,9 @@ Each component is independently understandable and restyled in isolation.
 ## 6. Animation & interaction
 
 - Keep Framer Motion `whileInView` reveals across sections (consistent durations).
-- Keep custom cursor (`SmoothFollower`); ring color → cyan.
+- Keep custom cursor (`SmoothFollower`); ring stays white (mono).
 - Keep the scroll-driven 120-frame canvas hero untouched functionally.
-- Respect existing hover micro-interactions; standardize on cyan primary / orange secondary.
+- Respect existing hover micro-interactions; standardize on the single orange accent.
 
 ---
 
@@ -157,10 +153,10 @@ Each component is independently understandable and restyled in isolation.
 
 ## 8. Success criteria
 
-- All copy reflects the new KTP role + Belfast; no stale "London"/old-primary references.
-- Visual language reads as Editorial Mono: mono base, cyan primary, orange secondary.
+- All copy reflects the new KTP role + Belfast; no stale "London"/old-color references.
+- Visual language reads as Editorial Mono: mono base + single orange accent, no cyan anywhere.
 - Skills renders as a bento grid with the AI flagship tile.
-- Experience and Education are visually separate blocks.
+- Experience & Education render as one combined chronological timeline.
 - "Currently" card appears between hero and Skills.
 - `npm run build` / lint pass clean (Netlify build green, matching prior commit intent).
 - Responsive at mobile + desktop; no layout breakage in the hero.
