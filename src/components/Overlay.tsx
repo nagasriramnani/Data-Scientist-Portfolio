@@ -63,7 +63,7 @@ export default function Overlay({ progress }: OverlayProps) {
                     Ram<span className="text-[#FF5A1F]">.</span>
                 </motion.h1>
 
-                {/* Subtitle — Small, uppercase, cyan */}
+                {/* Subtitle — Small, uppercase, accent */}
                 <motion.h2
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

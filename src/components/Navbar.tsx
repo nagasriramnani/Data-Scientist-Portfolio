@@ -41,7 +41,7 @@ export default function Navbar() {
             }}
             animate={hidden ? "hidden" : "visible"}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={`fixed top-0 inset-x-0 z-50 flex items-center justify-center pt-6 px-4 pb-4 transition-colors duration-300 ${scrolled ? "bg-[#0A0A0A]/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
+            className={`fixed top-0 inset-x-0 z-50 flex items-center justify-center pt-6 px-4 pb-4 transition-colors duration-300 ${scrolled ? "bg-[#070707]/80 backdrop-blur-md border-b border-white/5" : "bg-transparent"
                 }`}
         >
             <nav className="flex items-center gap-6 md:gap-10 border border-white/10 rounded-full px-8 py-3 bg-white/5 backdrop-blur-md">

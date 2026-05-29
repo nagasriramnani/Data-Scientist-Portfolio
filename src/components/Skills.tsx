@@ -124,7 +124,7 @@ export default function Skills() {
                         Tech <span className="text-[#FF5A1F]">Arsenal</span>
                     </h2>
                     <p className="hidden md:block font-jetbrains-mono text-xs tracking-[0.2em] uppercase text-neutral-500">
-                        7 domains · 60+ tools
+                        7 domains · 50+ tools
                     </p>
                 </motion.div>
 
