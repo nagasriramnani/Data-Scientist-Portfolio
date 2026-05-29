@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #0A0A0A;
+  --background: #070707;
   --foreground: #ffffff;
-  --primary-accent: #00C8FF;
-  --secondary-accent: #FF6B2B;
+  --accent: #FF5A1F;
+  --muted: #888888;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: #FF5A1F;
 }
 
 @layer utilities {
