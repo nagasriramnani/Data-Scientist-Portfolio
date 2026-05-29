@@ -7,7 +7,7 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <main className="w-full bg-[#0A0A0A] text-white">
+    <main className="w-full bg-[#070707] text-white">
       <Navbar />
       <div id="about">
         <ScrollyCanvas />

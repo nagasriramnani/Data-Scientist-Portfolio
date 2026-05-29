@@ -20,14 +20,16 @@ const syne = Syne({
 });
 
 export const metadata: Metadata = {
-  title: "Naga Sri Ram Kochetti | AI Systems Architect",
-  description: "Personal Portfolio of Naga Sri Ram Kochetti — AI Systems Architect, Full Stack AI Engineer, and Researcher based in London.",
+  title: "Naga Sri Ram Kochetti | AI Product Engineer",
+  description:
+    "Portfolio of Naga Sri Ram Kochetti — AI Product Engineer & KTP Associate at Ulster University & The Odyssey Trust, based in Belfast, UK.",
   openGraph: {
-    title: "Naga Sri Ram Kochetti | AI Systems Architect",
-    description: "Personal Portfolio of Naga Sri Ram Kochetti",
+    title: "Naga Sri Ram Kochetti | AI Product Engineer",
+    description:
+      "AI Product Engineer & KTP Associate · Ulster University & The Odyssey Trust · Belfast, UK",
     type: "website",
-    url: "https://www.nagasriram.com"
-  }
+    url: "https://www.nagasriram.com",
+  },
 };
 
 export default function RootLayout({
@@ -45,7 +47,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} ${syne.variable} antialiased bg-[#0A0A0A] text-white cursor-none`}
+        className={`${inter.variable} ${jetbrainsMono.variable} ${syne.variable} antialiased bg-[#070707] text-white cursor-none`}
       >
         <SmoothFollower />
         {children}
