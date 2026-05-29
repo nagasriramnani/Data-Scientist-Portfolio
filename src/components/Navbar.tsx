@@ -26,6 +26,7 @@ export default function Navbar() {
 
     const links = [
         { name: "About", href: "#about" },
+        { name: "Currently", href: "#currently" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
         { name: "Experience", href: "#experience" },
@@ -48,7 +49,7 @@ export default function Navbar() {
                     <a
                         key={link.name}
                         href={link.href}
-                        className="text-sm font-jetbrains-mono font-medium text-neutral-300 hover:text-[#00C8FF] transition-colors"
+                        className="text-sm font-jetbrains-mono font-medium text-neutral-300 hover:text-[#FF5A1F] transition-colors"
                     >
                         {link.name}
                     </a>

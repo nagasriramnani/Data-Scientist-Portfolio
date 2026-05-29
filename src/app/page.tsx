@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import ScrollyCanvas from "@/components/ScrollyCanvas";
+import Currently from "@/components/Currently";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Timeline from "@/components/Timeline";
@@ -11,6 +12,9 @@ export default function Home() {
       <Navbar />
       <div id="about">
         <ScrollyCanvas />
+      </div>
+      <div id="currently">
+        <Currently />
       </div>
       {/* All sections below use frame_119 as a fixed background */}
       <div
